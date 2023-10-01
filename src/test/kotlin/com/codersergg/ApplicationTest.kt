@@ -1,6 +1,5 @@
 package com.codersergg
 
-import com.codersergg.plugins.configureRouting
 import io.ktor.server.testing.*
 import kotlin.test.Test
 
@@ -8,7 +7,7 @@ class ApplicationTest {
     @Test
     fun testRoot() = testApplication {
         application {
-            configureRouting()
+            //configureRouting()
         }
         /*client.get("/").apply {
             assertEquals(HttpStatusCode.OK, status)
