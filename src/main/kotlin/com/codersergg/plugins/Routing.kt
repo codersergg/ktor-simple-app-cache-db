@@ -1,13 +1,15 @@
 package com.codersergg.plugins
 
+import com.codersergg.routes.articleRouting
+import com.codersergg.routes.customerRouting
+import com.codersergg.service.ArticleService
+import com.codersergg.service.CustomerService
 import io.ktor.server.application.*
-import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
-fun Application.configureRouting() {
+fun Application.configureRouting(articleService: ArticleService, customerService: CustomerService) {
     routing {
-        get("/") {
-            call.respondText("Hello World!")
-        }
+        articleRouting(articleService)
+        customerRouting(customerService)
     }
 }
